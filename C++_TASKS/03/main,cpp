@@ -1,0 +1,111 @@
+#include "List.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+    cout << "######List######\n";
+    List list;
+
+    for (int i = 1; i <= 20; i++)
+    {
+        list.addItem(i);
+    }
+
+    cout << "값 1 ~ 20 추가\n";
+    list.print();
+
+
+    cout << "index 3에 값 99 추가\n";
+    list.insertItem(3, 99);
+    list.print();
+
+    cout << "index 1 값 삭제\n";
+    list.removeAt(1);
+    list.print();
+
+    cout << "index 1000 값 삭제\n";
+    cout << list.removeAt(1000); 
+    cout << " \n";
+   
+
+
+    cout << "값 99 삭제\n";
+    list.removeItem(99);
+    list.print();
+
+    cout << "값 10, 11, 12를 담은 새로운 리스트 만들기\n";
+    List anoList;
+    anoList.addItem(10);
+    anoList.addItem(11);
+    anoList.addItem(12);
+    anoList.print();
+
+    cout << "기존 리스트에 concat\n";
+    list.concat(anoList);
+    list.print();
+
+    cout << "index 5 값: " << list.getItem(5) << "\n";
+
+    cout << "######OrderedList######\n";
+
+    OrderedList olist;
+
+    cout << "값 1 ~ 20을 무작위 순서로 추가\n";
+    olist.addItem(8);
+    olist.addItem(1);
+    olist.addItem(2);
+    olist.addItem(7);
+    olist.addItem(20);
+    olist.addItem(4);
+    olist.addItem(9);
+    olist.addItem(11);
+    olist.addItem(19);
+    olist.addItem(3);
+    olist.addItem(10);
+    olist.addItem(12);
+    olist.addItem(18);
+    olist.addItem(5);
+    olist.addItem(17);
+    olist.addItem(14);
+    olist.addItem(6);
+    olist.addItem(16);
+    olist.addItem(13);
+    olist.addItem(15);
+    olist.print();
+
+    cout << "값 1, 2, 3을 새로 추가\n";
+    olist.addItem(1);
+    olist.addItem(2);
+    olist.addItem(3);
+    olist.print();
+
+    cout << "index 1 값 삭제\n";
+    olist.removeAt(1);
+    olist.print();
+
+    cout << "값 19 삭제\n";
+    olist.removeItem(19);
+    olist.print();
+
+    cout << "값-1 삭제\n";
+    cout << olist.removeItem(-1);
+    cout << " \n";
+
+    cout << "값 1, 3, 5, 7을 담은 새로운 리스트 만들기\n";
+    OrderedList anoOlist;
+    anoOlist.addItem(1);
+    anoOlist.addItem(3);
+    anoOlist.addItem(5);
+    anoOlist.addItem(7);
+    anoOlist.print();
+
+    cout << "기존 리스트에 concat\n";
+    olist.concat(anoOlist);
+    olist.print();
+
+    cout << "index 5 값: " << olist.getItem(5) << "\n";
+
+
+}
